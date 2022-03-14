@@ -9,7 +9,7 @@ const wrapInDiv = str => `<div>${str}</div>`;
 const wrapInSpan = str => `<span>${str}</span>`;
 
 
-const wrap = (type, str) => `<${type}>${str}</${type}>`
+const wrap = type => str => `<${type}>${str}</${type}>`
 
 const result = wrapInDiv(trim(lowerCase(input)));
 console.log('Result', result);
@@ -28,6 +28,6 @@ console.log('New Result SPan', newSpanResult);
 
 // Creating the pipe 
 
-let newTransform = pipe(trim, lowerCase, wrap("div"));
+let newTransform = pipe(trim, lowerCase, wrap("h2"));
 const newTrasnformResult = newTransform(input);
 console.log('Resulttt', newTrasnformResult);
